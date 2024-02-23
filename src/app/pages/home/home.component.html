@@ -1,0 +1,51 @@
+<div class="homeContainer">
+  @if (loading) {
+    <h2>Loading...</h2>
+  } @else {
+    <div id="carouselMarket" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        @for (image of imgCarousel; track $index) {
+          <div class="carousel-item active">
+            <img src="{{image.img}}" class="d-block w-100" alt="{{image.title}}">
+          </div>
+        }
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselMarket" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselMarket" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <div class="cardContainer">
+      @for (category of categories; track $index) {
+        <div class="cardCategory">
+          <div class="cardContent"> 
+            <h4>{{category | uppercase}}</h4>
+            <img src="{{imgCategory[$index].img}}" alt="{{imgCategory[$index].title}}">
+          </div>
+          <a (click)="goToProducts(category)">Go to {{category}}</a>
+        </div>
+      }
+    </div>
+
+    <div class="welcomeContainer">
+      <h1>Welcome to BetterSales – Your Ultimate Online Shopping Destination!</h1>
+      <hr>
+      <p>Step into a world of endless possibilities and discover the latest trends in Clothes. At BetterSales, we curate a diverse collection of high-quality products that cater to your unique style and needs.</p>
+
+      <p>Why stop with us?</p>
+
+      <ul>
+        <li>Trendsetting Fashion: Stay ahead of the curve with our carefully selected fashion-forward items.</li>
+        <li>Unmatched Quality: We believe in delivering products that exceed your expectations, ensuring satisfaction with every purchase.</li>
+        <li>Seamless Shopping Experience: Enjoy a user-friendly interface, secure payment options, and swift delivery to your doorstep.</li>
+      </ul>
+
+      <p>Join our community of savvy shoppers who trust BetterSales for an unparalleled online shopping experience. Happy shopping!</p>
+    </div>
+  }
+</div>

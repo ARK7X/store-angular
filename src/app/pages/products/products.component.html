@@ -1,0 +1,44 @@
+<div class="productsContainer">
+    @if (loading) {
+        <h2>Loading...</h2>
+    } @else {
+        @for (product of products; track $index) {
+            <div class="card">
+                <div class="card-body cardContent">
+                    <img src="{{product.image}}" alt="{{product.title}}">
+                    <div class="cardText">
+                        <h3>{{product.title}}</h3>
+                        <hr>
+                        <div id="starRatings{{$index}}" class="starRatings">
+                            <app-star-rating [rate]="product.rating.rate" [idx]="$index" [countRatings]="product.rating.count"/>
+                        </div>
+                        <h4>{{product.price| currency}}</h4>
+                        <p>{{product.description}}</p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button (click)="addProducToCart(product.image, product.title, product.price)" class="btn btn-warning" type="button">Add to Cart</button>
+                </div>
+            </div>
+        }
+    }
+</div>
+
+<div class="filter">
+    <h3>Filter</h3>
+    <hr>
+    @for (category of categories; track $index) {
+        <input (click)="getFilter(category)" type="radio" class="form-check-input" name="categories" id="{{category}}"/>
+        <label class="form-check-label" for="brand">{{category}}</label>
+        <br>
+    }
+    <input (click)="getProducts()" type="radio" class="form-check-input" name="categories" id="allproducts"/>
+    <label class="form-check-label" for="brand">All products</label>
+    <!-- <button (click)="reset()" type="button" class="btn btn-primary">All products</button> -->
+  </div>
+
+@if (showAlert) {
+    <div id="modelMessage" class="modelMessage">
+        <h6>{{alertMessage}}</h6>
+    </div>
+}

@@ -1,0 +1,152 @@
+.homeContainer {
+  margin: 0 auto;
+  width: 70%;
+  height: fit-content;
+  padding-top: 3.3%;
+  padding-bottom: 0.5%;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  z-index: 0;
+}
+
+#carouselMarket img {
+  height: 70vh;
+}
+
+#carouselMarket::before {
+  content: "";
+  width: 100%;
+  min-height: 70vh;
+  position: absolute;
+  z-index: 1;
+  background-image: linear-gradient(to top, #f8f8f8, transparent);
+}
+
+.carousel-control-prev {
+  position: absolute;
+  bottom: 80%;
+}
+
+.carousel-control-next {
+  position: absolute;
+  bottom: 80%;
+}
+
+.cardContainer {
+  position: absolute;
+  bottom: 25%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  z-index: 2;
+}
+
+.cardCategory {
+  margin: 15px;
+  padding: 15px;
+  width: 19rem;
+  background-color: #fff;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.cardCategory:hover {
+  box-shadow: 0px 0px 15px #ffce2b;
+}
+
+.cardCategory > a {
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+}
+
+.cardContent img {
+  width: 15rem;
+  height: 12rem;
+}
+
+.welcomeContainer {
+  margin: 15px;
+  text-align: justify;
+}
+
+@media (max-width: 1200px) {
+  .cardContainer {
+    position: absolute;
+    margin-left: 5%;
+    bottom: 25%;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    z-index: 2;
+  }
+}
+
+@media (max-width: 992px) {
+  .cardContainer {
+    margin-bottom: 12%;
+  }
+
+  .cardCategory  {
+    width: 16rem;
+  }
+  
+  .cardContent > h4 {
+    font-size: 1em;
+  }
+
+  .cardContent img {
+    width: 9rem;
+    height: 7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .cardContainer {
+    margin-bottom: 12%;
+  }
+
+  .cardCategory  {
+    width: 12rem;
+  }
+  
+  .cardContent > h4 {
+    font-size: 0.8em;
+  }
+
+  .cardCategory > a {
+    font-size: 0.8em;
+  }
+
+  .cardContent img {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .cardContainer {
+    margin-bottom: 12%;
+  }
+
+  .cardCategory  {
+    width: 9rem;
+  }
+  
+  .cardContent > h4 {
+    font-size: 0.5em;
+  }
+
+  .cardCategory > a {
+    font-size: 0.5em;
+  }
+
+  .cardContent img {
+    width: 5rem;
+    height: 5rem;
+  }
+}

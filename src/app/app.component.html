@@ -1,0 +1,20 @@
+<div class="navBar">
+    <ul class="listBar">
+      <li>
+        <a routerLink="" [ngClass]="{active: menuOption == 'home'}" (click)="onOption('home')"><i class="fa-solid fa-house"></i>Home</a>
+      </li>
+      <li>
+        <a routerLink="products" [ngClass]="{ active: menuOption == 'products'}" (click)="onOption('products')"><i class="fa-solid fa-bag-shopping"></i>Products</a>
+      </li>
+      <li>
+        <a routerLink="cart" [ngClass]="{active: menuOption == 'cart'}" (click)="onOption('cart')">
+          @if (count != 0 && count > 0) {
+            <span class="countItems">{{count}}</span>
+          }
+          <i class="fa-solid fa-cart-shopping"></i>
+          Cart
+        </a>
+      </li>
+    </ul>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,75 @@
+.navBar {
+    margin: 0 auto;
+    width: 100%;
+    background-color: #42413d;
+    position: fixed;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    z-index: 3;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.3em;
+}
+
+
+div > ul > li {
+    list-style: none;
+    position: relative;
+    float: left;
+    cursor: pointer;
+}
+
+.browser{
+    margin-left: 8%;
+}
+
+.browser input{
+    border-radius: 5px;
+    border: 0;
+    outline: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1em;
+}
+
+div > ul > li:last-child {
+    margin-right: 60px;
+    float: right;
+}
+
+
+div > ul > li > a {
+    color: white;
+    display: block;
+    padding-top: 15px;
+    padding-left: 15px;
+    margin-bottom: 15px;
+    text-decoration: none;
+}
+
+a > i {
+    margin: 5px;
+}
+
+a > input {
+    width: 40vw;
+    height: 3.5vh;
+}
+
+
+a > input:focus-visible {
+    box-shadow: 0px 0px 15px #ffce2b;
+}
+
+div > ul > li:hover:not(.browser) > a {
+    transition: all 100ms ease;
+    transform: scale(1.2);
+    color: #ffce2b;
+}
+
+.active {
+    transform: scale(1.1);
+    text-shadow: 0px 0px 10px #ffce2b; 
+}
+
+.countItems {
+    color: #ffce2b;
+}
+

@@ -1,0 +1,7 @@
+body {
+    margin: 0 auto;
+    background-image: url("./assets/patron.jpg");
+    background-size: contain;
+    background-attachment: fixed;
+
+}
